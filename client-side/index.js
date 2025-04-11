@@ -72,7 +72,9 @@ mcpClient.connect(new SSEClientTransport(new URL("http://localhost:3001/sse"))).
         };
     });
     
-    console.log('Available tools:', tools);
+    console.log('Available tools:', 
+        tools.map(tool => tool.name).join(', ')
+    );
     startChat().catch(error => {
         console.error('Fatal error:', error);
         process.exit(1);
@@ -102,17 +104,17 @@ async function askGemini() {
     const functionCall = response.candidates[0].content.parts[0].functionCall;
 
     if (functionCall) {
-        console.log('Function call detected:', functionCall.name, functionCall.args);
+        // console.log('Function call detected:', functionCall.name, functionCall.args);
         const toolResponse = await mcpClient.callTool(
            {
                 name: functionCall.name,
                 arguments: functionCall.args
            }
         );
-        console.log('Tool response:', toolResponse.content[0].text);
+        // console.log('Tool response:', toolResponse.content[0].text);
 
         if(toolResponse.content[1]){
-            console.log('Tool response:', toolResponse.content[1].text);
+            // console.log('Tool response:', toolResponse.content[1].text);
             return toolResponse.content[1].text;
         }
 

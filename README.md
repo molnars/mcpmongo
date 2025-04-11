@@ -20,6 +20,10 @@ This project demonstrates the integration of MongoDB with the Model Context Prot
     └── package.json        # Server dependencies
 ```
 
+
+
+
+
 ## Features
 
 - **MongoDB Integration**: Full CRUD operations exposed as MCP tools
@@ -32,6 +36,8 @@ This project demonstrates the integration of MongoDB with the Model Context Prot
 - Node.js (v14 or higher)
 - MongoDB instance (local or remote)
 - Google Gemini API key
+
+![Function Calling Overview](./images/function-calling-overview.png)
 
 ## Setup Instructions
 
@@ -130,6 +136,17 @@ AI: Found 2 documents in collection 'users'
 
 ### Client (.env file in client-side/)
 - `GEMINI_API_KEY`: API key for Google's Gemini AI
+
+
+## Images
+
+![Chatbot Interface](./images/1.png)
+
+![Chatbot Interface](./images/2.png)
+
+![Chatbot Interface](./images/3.png)
+
+
 
 ## License
 
